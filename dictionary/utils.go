@@ -1,6 +1,7 @@
 package dictionary
 
 import (
+	"fmt"
 	"os"
 	"strings"
 )
@@ -21,4 +22,11 @@ func (u *utilStruct) FileExists(filePath string) bool {
 	}
 
 	return true
+}
+
+func checkAndPanic(err error) {
+	if err != nil {
+		fmt.Println("Ops")
+		os.Exit(1)
+	}
 }
