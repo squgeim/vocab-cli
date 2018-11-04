@@ -59,3 +59,8 @@ func (w *Word) writeToFile() {
 	err = ioutil.WriteFile(wordFile, b, 0644)
 	checkAndPanic(err)
 }
+
+func (w *Word) incrementAccess() {
+	w.AccessedTimes = append(w.AccessedTimes, time.Now())
+	w.writeToFile()
+}
