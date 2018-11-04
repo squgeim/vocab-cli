@@ -20,6 +20,11 @@ func random(cmd *cobra.Command, args []string) {
 		os.Exit(1)
 	}
 
+	if word.Word == "" {
+		fmt.Println("Looks like your dictionary is empty. Time to add some words!")
+		os.Exit(0)
+	}
+
 	fmt.Println(word.Word)
 }
 
